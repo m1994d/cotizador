@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    border-bottom: 3px solid #e74c3c;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.cotizacion-info {
+    text-align: right;
+}
+
+.cotizacion-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #e74c3c;
+}
+
+.cotizacion-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Main Content */
+main {
+    padding: 30px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    font-size: 1.4rem;
+}
+
+/* Form Styles */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input, 
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Productos Table */
+.productos-container,
+.historial-container {
+    overflow-x: auto;
+}
+
+#productos-table,
+#historial-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+#productos-table th,
+#historial-table th {
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+#productos-table td,
+#historial-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+#productos-table tr:hover,
+#historial-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.producto-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.btn-eliminar {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background: #c0392b;
+}
+
+.btn-agregar {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    display: inline-block;
+}
+
+.btn-agregar:hover {
+    background: #219a52;
+    transform: translateY(-2px);
+}
+
+/* Totales Section */
+.totales-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.notas-section h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+#notas {
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.calculo-totales {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid #3498db;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.total-row:last-child {
+    border-bottom: none;
+}
+
+.total-final {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 2px solid #3498db;
+}
+
+.descuento-input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.descuento-input input {
+    width: 70px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Acciones Section */
+.acciones-section {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-primario, .btn-secundario {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primario {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-primario:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+.btn-secundario {
+    background: #95a5a6;
+    color: white;
+}
+
+.btn-secundario:hover {
+    background: #7f8c8d;
+    transform: translateY(-2px);
+}
+
+/* Filtros Section */
+.filtros-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.footer-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.footer-legal {
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    border-top: 1px solid #34495e;
+    padding-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .totales-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .acciones-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primario, .btn-secundario {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    #productos-table {
+        font-size: 0.8rem;
+    }
+    
+    #productos-table th,
+    #productos-table td {
+        padding: 8px 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 0;
+        box-shadow: none;
+    }
+    
+    main {
+        padding: 15px;
+    }
+    
+    header {
+        padding: 15px;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .cotizacion-info h2 {
+        font-size: 1.5rem;
+    }
+    
+    .acciones-section {
+        gap: 10px;
+    }
+    
+    .btn-primario, .btn-secundario {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    
+    .container, .container * {
+        visibility: visible;
+    }
+    
+    .container {
+        box-shadow: none;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .btn-agregar, 
+    .btn-eliminar,
+    .acciones-section,
+    .filtros-section {
+        display: none;
+    }
+    
+    header, main, footer {
+        break-inside: avoid;
+    }
+    
+    #productos-table {
+        page-break-inside: auto;
+    }
+    
+    #productos-table tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+    
+    /* Asegurar que la tabla se imprima correctamente */
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 8px;
+    }
+}
