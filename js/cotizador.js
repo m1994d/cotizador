@@ -318,7 +318,7 @@ class CotizadorMadTech {
             
             y += 6;
             doc.setFontSize(11);
-            doc.text('Subtotal con Descuento:', margin + 100, y);
+            doc.text('Subtotal:', margin + 100, y);
             doc.text(`$${subtotalConDescuento.toFixed(2)}`, margin + 140, y);
             
             y += 6;
@@ -351,9 +351,9 @@ class CotizadorMadTech {
             doc.setFontSize(8);
             doc.setTextColor(127, 140, 141);
             doc.text('MadTech Solutions S.A.S', margin, y);
-            doc.text('Tel: (555) 123-4567 | Email: info@madtech.com', margin, y + 5);
-            doc.text('Dirección: Calle Tecnología 123, Ciudad Tech', margin, y + 10);
-            doc.text('Esta cotización tiene una validez de 30 días', margin, y + 20);
+            doc.text('Tel: (57) 3054668929 | Email: administrativoo@madtech.com', margin, y + 5);
+            doc.text('Dirección: Carrera 13 #17 - 74, Bogotá D.C.', margin, y + 10);
+            doc.text('Esta cotización tiene una validez de 10 días', margin, y + 20);
 
             // Guardar PDF
             doc.save(`cotizacion_${this.numeroCotizacion}.pdf`);
