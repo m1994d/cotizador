@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Cotizaciones - MadTech</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>MadTech</h1>
+                <p>Historial de Cotizaciones</p>
+            </div>
+            <div class="cotizacion-info">
+                <h2>HISTORIAL</h2>
+                <p>Total: <span id="total-cotizaciones">0</span> cotizaciones</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="filtros-section">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="buscar-cliente">Buscar por Cliente:</label>
+                        <input type="text" id="buscar-cliente" placeholder="Nombre del cliente">
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha-desde">Fecha Desde:</label>
+                        <input type="date" id="fecha-desde">
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha-hasta">Fecha Hasta:</label>
+                        <input type="date" id="fecha-hasta">
+                    </div>
+                    <div class="form-group">
+                        <label for="ordenar-por">Ordenar por:</label>
+                        <select id="ordenar-por">
+                            <option value="fecha-desc">Fecha (Más reciente)</option>
+                            <option value="fecha-asc">Fecha (Más antigua)</option>
+                            <option value="monto-desc">Monto (Mayor a menor)</option>
+                            <option value="monto-asc">Monto (Menor a mayor)</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="limpiar-filtros" class="btn-secundario">Limpiar Filtros</button>
+            </section>
+
+            <section class="historial-section">
+                <h3>Cotizaciones Guardadas</h3>
+                <div class="historial-container">
+                    <table id="historial-table">
+                        <thead>
+                            <tr>
+                                <th>N° Cotización</th>
+                                <th>Cliente</th>
+                                <th>Fecha</th>
+                                <th>Total</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Cotizaciones se cargarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="acciones-section">
+                <button id="volver-cotizador" class="btn-primario">⬅️ Volver al Cotizador</button>
+                <button id="exportar-historial" class="btn-secundario">📄 Exportar Historial</button>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-info">
+                <p>MadTech Solutions S.A.S</p>
+                <p>Tel: (555) 123-4567 | Email: info@madtech.com</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/historial.js"></script>
+</body>
+</html>

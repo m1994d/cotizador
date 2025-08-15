@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador MadTech</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>MadTech</h1>
+                <p>Soluciones Tecnológicas Avanzadas</p>
+            </div>
+            <div class="cotizacion-info">
+                <h2>COTIZACIÓN</h2>
+                <p>N°: <span id="cotizacion-numero">MT-001</span></p>
+                <p>Fecha: <span id="fecha-actual"></span></p>
+            </div>
+        </header>
+
+        <main>
+            <section class="cliente-section">
+                <h3>Datos del Cliente</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nombre-cliente">Nombre/Razón Social:</label>
+                        <input type="text" id="nombre-cliente" placeholder="Ingrese el nombre del cliente">
+                    </div>
+                    <div class="form-group">
+                        <label for="email-cliente">Email:</label>
+                        <input type="email" id="email-cliente" placeholder="cliente@empresa.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono-cliente">Teléfono:</label>
+                        <input type="tel" id="telefono-cliente" placeholder="(555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion-cliente">Dirección:</label>
+                        <input type="text" id="direccion-cliente" placeholder="Dirección completa">
+                    </div>
+                </div>
+            </section>
+
+            <section class="productos-section">
+                <h3>Productos/Servicios</h3>
+                <div class="productos-container">
+                    <table id="productos-table">
+                        <thead>
+                            <tr>
+                                <th>Descripción</th>
+                                <th>Cantidad</th>
+                                <th>Precio Unitario</th>
+                                <th>Descuento %</th>
+                                <th>Total</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Productos se agregarán aquí dinámicamente -->
+                        </tbody>
+                    </table>
+                    
+                    <button id="agregar-producto" class="btn-agregar">+ Agregar Producto/Servicio</button>
+                </div>
+            </section>
+
+            <section class="totales-section">
+                <div class="totales-grid">
+                    <div class="notas-section">
+                        <h4>Notas</h4>
+                        <textarea id="notas" placeholder="Condiciones especiales, garantías, términos de pago, etc."></textarea>
+                    </div>
+                    
+                    <div class="calculo-totales">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Descuento Global:</span>
+                            <div class="descuento-input">
+                                <input type="number" id="descuento-global" min="0" max="100" value="0">
+                                <span>%</span>
+                            </div>
+                        </div>
+                        <div class="total-row">
+                            <span>Subtotal con Descuento:</span>
+                            <span id="subtotal-descuento">$0.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>IVA (19%):</span>
+                            <span id="iva">$0.00</span>
+                        </div>
+                        <div class="total-row total-final">
+                            <span><strong>TOTAL:</strong></span>
+                            <span id="total-final"><strong>$0.00</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="acciones-section">
+                <button id="limpiar-cotizacion" class="btn-secundario">Limpiar</button>
+                <button id="guardar-cotizacion" class="btn-secundario">💾 Guardar Cotización</button>
+                <button id="ver-historial" class="btn-secundario">📋 Ver Historial</button>
+                <button id="imprimir-cotizacion" class="btn-primario">🖨️ Imprimir Cotización</button>
+                <button id="exportar-pdf" class="btn-primario">📄 Exportar a PDF</button>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-info">
+                <p>MadTech Solutions S.A.S</p>
+                <p>Tel: (555) 123-4567 | Email: info@madtech.com</p>
+                <p>Dirección: Calle Tecnología 123, Ciudad Tech</p>
+            </div>
+            <div class="footer-legal">
+                <p>Esta cotización tiene una validez de 30 días</p>
+                <p>Los precios no incluyen instalación ni configuración adicional</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="js/cotizador.js"></script>
+</body>
+</html>
